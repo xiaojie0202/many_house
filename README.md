@@ -30,3 +30,8 @@ pymysql.install_as_MySQLdb()
 
 # 运行
     python manage.py runserver
+    
+# 项目截图
+![](https://github.com/xiaojie0202/many_house/blob/master/media/%E6%88%AA%E5%9B%BE1.png)
+![](https://github.com/xiaojie0202/many_house/blob/master/media/%E6%88%AA%E5%9B%BE2.png)
+![](https://github.com/xiaojie0202/many_house/blob/master/media/%E6%88%AA%E5%9B%BE3.png)
