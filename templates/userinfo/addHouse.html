@@ -1,0 +1,275 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}发布房屋{% endblock title %}
+
+
+{% block user_style %}
+    <link href="/static/css/ModifyPersonalInfo.css" rel="stylesheet" type="text/css"/>
+
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div id="Right" class="span8">
+        <div class="modifyPersonalInfo-title">
+            <h4>发布新房屋</h4>
+        </div>
+
+        <!--资料修改开始-->
+        <div class="span6" id="modifyPersonalInfo">
+            <form method="post" enctype="multipart/form-data">
+                <table>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                标题：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="inputInfo" name="title" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                区域：
+                            </label>
+                        </td>
+
+                        <td>
+                            <select name="area" required>
+                                {% for area in request.user.myuser.area.area_set.all %}
+                                    <option value="{{ area.id }}">{{ area.name }}</option>
+
+                                {% endfor %}
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                小区名：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="inputInfo" name="plot_name" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                面积(平米)：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="inputInfo" name="acreage" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                单价(元/平米)：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="inputInfo" name="price" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                总价(万)：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="inputInfo" name="total_prices" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                户型：
+                            </label>
+                        </td>
+
+                        <td>
+                            <select name="door_model" required>
+                                <option value="1">1室</option>
+                                <option value="2">2室</option>
+                                <option value="3">3室</option>
+                                <option value="4">4室</option>
+                                <option value="5">4室以上</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                产权类型：
+                            </label>
+                        </td>
+
+                        <td>
+                            <select name="house_type" required>
+                                <option value="1">住宅</option>
+                                <option value="2">别墅</option>
+                                <option value="3">写字楼</option>
+                                <option value="4">商铺</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                房屋类型：
+                            </label>
+                        </td>
+
+                        <td>
+                            <select name="is_new" required>
+                                <option value="1">新房</option>
+                                <option value=" ">二手房</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                装修情况：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="text" id="inputInfo" name="decorate_situation" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                楼层：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="inputInfo" name="fllor" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                主图：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="file" id="inputInfo" name="master_img" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                轮播图：
+                            </label>
+                        </td>
+
+                        <td>
+                            <input type="file" id="inputInfo" multiple name="img" required>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr height="50">
+                        <td height="24" align="right">
+                            <label class="control-label" for="inputInfo">
+                                <span class="Required">*</span>
+                                详情：
+                            </label>
+                        </td>
+
+                        <td>
+                            <textarea name="housing_details" required></textarea>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+
+                    <tr height="50">
+                        <td></td>
+                        <td>
+                            <button class="btn btn-info" type="submit">确认修改</button>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+        <!--修改结束-->
+
+    </div>
+
+{% endblock user_body %}
+
+
+
+
+{% block main-script %}
+{% endblock main-script %}

@@ -1,0 +1,71 @@
+#Left{
+	width:200px;
+	float:left;
+	margin:0 20px 0 0;
+}
+
+/*个人中心*/
+.personalCenter{
+	height:150px;
+	width:200px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+/*个人中心标题*/
+.personalCenter-title{                   
+	background-color:#87CEEB;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	height:30px;
+	width:200px;
+	margin:0;
+}
+h5{
+	color:#FFFFFF;
+	margin:0 0 0 10px;
+	line-height:30px;
+	text-align:center;
+}
+
+.personalCenter-content{
+	width:160px;
+	margin:20px;
+}
+.userName{
+	font-size:13px;
+	font-weight:bold;
+}
+
+
+/*用户功能权限*/
+.userFunction,.MortgageCalculator{
+	width:200px;
+	margin:10px 0 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.userFunction ul{
+	margin:0;
+}
+.userFunction ul li img,.MortgageCalculator ul li img{
+	margin:0 20px 0 0;
+}
+.userFunction ul li a,.MortgageCalculator ul li a{
+	text-align:center;
+}
+.userFunction ul li a:hover,.MortgageCalculator ul li a:hover{
+	background-color:#87ceeb;
+	color:#FFFFFF;
+}

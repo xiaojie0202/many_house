@@ -1,0 +1,188 @@
+#focus{
+	width:720px;
+	height:300px;
+	margin:0 10px 10px 0;
+}
+
+/*房源分类*/
+#ListingCategories{
+	width:230px;
+	height:300px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.Area,.Status{
+	margin:20px;
+}
+#ListingCategories h5{
+	color:#FFFFFF;
+}
+.tr-bg{
+	background-color:#87ceeb;
+}
+
+/*今日团购*/
+#TodayDeal{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.TodayDeal-title{
+	height:40px;
+	background-color:#87CEEB;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	margin:0;
+}
+h4{
+	margin:0 0 0 10px;
+	float:left;
+	color:#FFFFFF;
+	line-height:40px;	
+}
+.TodayDeal-title a{
+	float:right;
+	margin:0 10px 0 0;
+	line-height:40px;
+	color:#FFFFFF;
+}
+.span4{
+	width:308px;
+	height:350px;
+	border:1px solid #e7e7e7;
+	margin:10px 5px 10px 5px;
+}
+.span4:hover{
+	background-color:#87ceeb;
+}
+.span4 img{
+	margin:4px;
+}
+.span4 p{
+	margin:4px;
+	font-size:16px;
+}
+.span4 p:hover{
+	color:#FFFFFF;
+}
+.readDetail{
+	width:300px;
+	height:50px;
+	margin:4px;
+	background-color:#FF0000;
+}
+.readDetail h3{
+	float:left;
+	line-height:30px;
+	color:#FFFFFF;
+	margin-left:10px;
+}
+.readDetail a{
+	float:right;
+	color:#000000;
+	width:80px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 10px 0 0;
+	text-align:center;
+	display:block;
+	background:url(/static/images/readDetail.png) no-repeat;
+}
+.readDetail a:hover{
+	text-decoration:none;
+}
+
+
+#Subscription{
+	background-color:#F6F6F6;
+}
+.subscription{
+	margin:80px 0 30px 0;
+	text-align:center;
+}
+.subscription h3,.subscription h6{
+	color:#999999;
+}
+.subscription a{
+	color:#FFFFFF;
+	width:120px;
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 10px 0 0;
+	text-align:center;
+	margin:0 0 0 90px;
+	display:block;
+	background:url(../GroupBuy/images/subscription.png) no-repeat;
+}
+.subscription a:hover{
+	text-decoration:none;
+}
+
+
+
+
+/*往期团购*/
+#PastEvents{
+	margin:10px 0 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.PastEvents-title{
+	height:40px;
+	background-color:#87CEEB;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	margin:0;
+}
+
+
+.PastreadDetail{
+	width:300px;
+	height:50px;
+	margin:4px;
+	background-color:#CCCCCC;
+}
+.PastreadDetail h3{
+	float:left;
+	line-height:30px;
+	color:#FFFFFF;
+	margin-left:10px;
+}
+.PastreadDetail a{
+	float:right;
+	color:#000000;
+	width:80px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 10px 0 0;
+	text-align:center;
+	display:block;
+	background:url(../GroupBuy/images/readDetail02.png) no-repeat;
+}
+.PastreadDetail a:hover{
+	text-decoration:none;
+}

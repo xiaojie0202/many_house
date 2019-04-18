@@ -1,0 +1,94 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}浏览历史{% endblock title %}
+
+
+{% block user_style %}
+    <link href="/static/css/BrowseHistory.css" rel="stylesheet" type="text/css"/>
+
+
+
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div id="Right" class="span8">
+        <div class="browseHistory-title">
+            <h4>您在优楼盘的浏览记录</h4>
+        </div>
+
+        <!--浏览历史开始-->
+        <div id="browseHistory">
+            <table width="700" cellspacing="0" cellpadding="0" border="0">
+
+                <tr height="40" class="tr-bgclor">
+                    <td align="left" colspan="4">
+                    </td>
+
+                </tr>
+                {% for histery in histery_obj %}
+                    <tr height="50" valign="middle">
+
+                        <td width="300" align="left">
+                            <p><a href="/HouseDetail/{{ histery.house.id }}" class="browseHistory-PropertyName">{{ histery.house.title }}</a>
+                            </p>
+                        </td>
+                        <td width="100">
+                            <p class="PropertyPrice">{{ histery.house.total_prices }}万</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+                {#                <tr height="40" class="tr-bgclor">#}
+                {#                    <td width="30" align="center" colspan="5">#}
+                {#                        <div class="span8" id="page">#}
+                {#                            <a href="#">尾页</a>#}
+                {#                            <a href="#">下一页</a>#}
+                {#                            <a href="#">2</a>#}
+                {#                            <a href="#">1</a>#}
+                {#                            <a href="#">上一页</a>#}
+                {#                            <a href="#">第一页</a>#}
+                {##}
+                {#                        </div>#}
+                {#                    </td>#}
+                {##}
+                {#                </tr>#}
+            </table>
+        </div>
+        <!--浏览历史结束-->
+
+    </div>
+
+{% endblock user_body %}
+
+
+
+
+{% block main-script %}
+{% endblock main-script %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

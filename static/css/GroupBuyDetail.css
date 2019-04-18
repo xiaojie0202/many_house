@@ -1,0 +1,148 @@
+/*面包屑导航*/
+#bread{
+	height:30px;
+	line-height:30px;
+	float:left;
+	margin-left:0;
+}
+
+#part1{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+#part1 h4{
+	margin:20px 0 10px 10px;
+}
+
+#focus{
+	width:640px;
+	height:300px;
+	margin:10px 0 10px 10px;
+}
+
+/*焦点图右侧*/
+#focusRight{
+	width:270px;
+	margin:0 20px 0 20px;
+}
+.focusRight-title{
+	height:50px;
+	background-color:#FF0000;
+}
+.focusRight-title h3{
+	line-height:50px;
+	color:#FFFFFF;
+	margin-left:10px;
+}
+.Attention{
+	margin:10px 0 0 0;
+	text-align:center;
+	border-bottom:1px dashed #e7e7e7;
+	padding-bottom:10px;
+}
+.Attention span{
+	color:#FF6600;
+	font-size:16px;
+	font-weight:bold;
+}
+
+
+/*报名*/
+#inputInfo{
+	width:150px;
+}
+.SignUp h4{
+	margin:0;
+}
+
+
+/*第二部分左侧*/
+#left{
+	width:640px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:10px 10px 10px 0;
+}
+/*选项卡开始*/
+.tabbable{
+	margin:10px;
+}
+.tab-content{
+	margin:10px;
+}
+.tabpane-title{
+	height:30px;
+	width:600px;
+	margin:10px 0 10px 0;
+	line-height:30px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#e7e7e7;
+}
+.tabpane-title span{
+	font-size:14px;
+	margin-left:10px;
+}
+.tab-content p{
+	text-indent:2em;
+}
+.tab-content img{
+	margin:10px 0 10px 0;
+	text-align:center;
+}
+
+/*右侧*/
+#right{
+	width:310px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:10px 0 10px 0;
+}
+.Recommend-title{
+	margin:0 10px 0 10px;
+	border-bottom:2px solid #87ceeb;
+}
+.Recommend-title h5{
+	margin-left:10px;
+}
+.RecommendGroup1{
+	margin:10px;
+	padding-bottom:10px;
+	border-bottom:1px dashed #e7e7e7;
+}
+.RecommendGroup1:hover{
+	background-color:#e7e7e7;
+}
+.RecommendGroup1 h3{
+	float:left;
+	color:#FF0000;
+}
+.gosee{
+	float:right;
+	color:#000000;
+	width:80px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	font-weight:bold;
+	margin:15px 0 0 0;
+	text-align:center;
+	display:block;
+	background:url(../GroupBuy/images/readDetail.png) no-repeat;
+}

@@ -1,0 +1,101 @@
+.MyFavorites{
+	background-color:#87ceeb;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+
+#Right{
+	width:700px;
+	float:right;
+	margin:0 0 20px 0;
+	padding:20px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+
+.myFavorite-title h4{
+	color:#87ceeb;
+	margin:0 0 10px 20px;
+}
+.myFavorite-title{
+	width:700px;
+	margin:0 0 20px 0;
+	border-bottom:2px solid #87ceeb;
+}
+.span12{
+	width:960px;
+}
+
+/*�ҵ��ղؿ�ʼ*/
+.ckbox{
+	width:20px;
+}
+.delete{
+	margin:0 0 0 20px;
+}
+.tr-bgclor{
+	background-color:#F5F5F5;
+}
+#myFavorite table td{
+	border-top:1px solid #e7e7e7;
+}
+.PropertyPrice{
+	font-size:14px;
+	font-weight:bold;
+	color:#FF6600;
+}
+#myFavorite table tr:hover{
+	background-color:#F5F5F5;	
+}
+.readdetail{
+	width:70px;
+	height:25px;
+	float:left;
+	text-align:center;
+	line-height:25px;
+	color:#FFFFFF;
+	display:block;
+	background-color:#87ceeb;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	margin:0 20px 0 0;
+}
+.SubscriptionInfo{
+	width:90px;
+	height:25px;
+	float:left;
+	text-align:center;
+	line-height:25px;
+	color:#FFFFFF;
+	display:block;
+	background-color:#87ceeb;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.PropertyName{
+	font-weight:bold;
+	font-size:14px;
+}
+
+/*ҳ��*/
+#page{
+	width:700px;
+}
+#page a{
+	float:right;
+	width:40px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	display:block;
+	background-color:#87ceeb;
+	margin:0 10px 0 0;
+	color:#FFFFFF;
+}

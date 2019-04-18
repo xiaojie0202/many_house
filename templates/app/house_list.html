@@ -1,0 +1,136 @@
+{% extends 'app/main.html' %}
+{% load tags %}
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}多多房-首页{% endblock title %}
+
+{% block main-style %}
+    <link href="/static/css/Property.css" rel="stylesheet" type="text/css"/>
+{% endblock main-style %}
+
+{% block body-style %}{% endblock body-style %}
+
+{% block main-body %}
+
+    <!--条件搜索-->
+    <div class="span12" id="ConditionSearch">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr height="30">
+                <td width="40"><span>区域：</span></td>
+                <td width="40"><a {% if not filter_data.area_name %}class="allCondition"{% endif %}href="?area_name={% filter_handel filter_data 'area_name' %}">全部</a></td>
+                <td width="840">
+                    {% for area in request.user.myuser.area.area_set.all %}
+                        <a {% if filter_data.area_name == area.name %}class="allCondition"{% endif %} href="?area_name={{ area.name }}{% filter_handel filter_data 'area_name' %}">{{ area.name }}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr height="30">
+                <td><span>价格：</span></td>
+                <td><a {% if not filter_data.price %}class="allCondition"{% endif %}  href="?price={% filter_handel filter_data 'price' %}">全部</a></td>
+                <td>
+                    <a {% if filter_data.price == '0,6000' %}class="allCondition"{% endif %} href="?price=0,6000{% filter_handel filter_data 'price' %}">6000一下</a>
+                    <a {% if filter_data.price == '6000,7000' %}class="allCondition"{% endif %} href="?price=6000,7000{% filter_handel filter_data 'price' %}">6000-7000</a>
+                    <a {% if filter_data.price == '7000,8000' %}class="allCondition"{% endif %} href="?price=7000,8000{% filter_handel filter_data 'price' %}">7000-8000</a>
+                    <a {% if filter_data.price == '8000,10000' %}class="allCondition"{% endif %} href="?price=8000,10000{% filter_handel filter_data 'price' %}">8000-1万</a>
+                    <a {% if filter_data.price == '10000,12000' %}class="allCondition"{% endif %} href="?price=10000,12000{% filter_handel filter_data 'price' %}">1万-1.2万</a>
+                    <a {% if filter_data.price == '12000,999999' %}class="allCondition"{% endif %} href="?price=12000,999999{% filter_handel filter_data 'price' %}">1.2万以上</a>
+                </td>
+            </tr>
+            <tr height="30">
+                <td><span>户型：</span></td>
+                <td><a {% if not filter_data.door_model %}class="allCondition"{% endif %} href="?door_model={% filter_handel filter_data 'door_model' %}">全部</a></td>
+                <td>
+                    <a {% if filter_data.door_model == '1' %}class="allCondition"{% endif %} href="?door_model=1{% filter_handel filter_data 'door_model' %}">一室</a>
+                    <a {% if filter_data.door_model == '2' %}class="allCondition"{% endif %} href="?door_model=2{% filter_handel filter_data 'door_model' %}">二室</a>
+                    <a {% if filter_data.door_model == '3' %}class="allCondition"{% endif %} href="?door_model=3{% filter_handel filter_data 'door_model' %}">三室</a>
+                    <a {% if filter_data.door_model == '4' %}class="allCondition"{% endif %} href="?door_model=4{% filter_handel filter_data 'door_model' %}">四室</a>
+                    <a {% if filter_data.door_model == '5' %}class="allCondition"{% endif %} href="?door_model=5{% filter_handel filter_data 'door_model' %}">四室以上</a>
+                </td>
+            </tr>
+            <tr height="30">
+                <td><span>类型：</span></td>
+                <td><a {% if not filter_data.house_type %}class="allCondition"{% endif %} href="?house_type={% filter_handel filter_data 'house_type' %}">全部</a></td>
+                <td>
+                    <a {% if filter_data.house_type == '1' %}class="allCondition"{% endif %} href="?house_type=1{% filter_handel filter_data 'house_type' %}">住宅</a>
+                    <a {% if filter_data.house_type == '2' %}class="allCondition"{% endif %} href="?house_type=2{% filter_handel filter_data 'house_type' %}">别墅</a>
+                    <a {% if filter_data.house_type == '3' %}class="allCondition"{% endif %} href="?house_type=3{% filter_handel filter_data 'house_type' %}">写字楼</a>
+                    <a {% if filter_data.house_type == '4' %}class="allCondition"{% endif %} href="?house_type=4{% filter_handel filter_data 'house_type' %}">商铺</a>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <!--条件搜索结束-->
+
+    <!--楼盘列表开始-->
+    <div class="span12" id="PropertyList">
+        <table cellpadding="0" cellspacing="0" width="940" border="0">
+            <tr height="40" class="FirstLine">
+                <td align="center"><p>共有<span class="SearchResults">{{ house_obj.count }}</span>个符合要求的楼盘</p></td>
+                <td colspan="2" align="right">
+{#                    <button class="btn btn-info" type="button">默认</button>#}
+{#                    <button class="btn btn-info" type="button">团购</button>#}
+{#                    <button class="btn btn-info" type="button">价格↑</button>#}
+{#                    <button class="btn btn-info" type="button">人气↓</button>#}
+                </td>
+            </tr>
+            {% for house in house_obj %}
+                <tr height="150">
+                    <td width="200" align="center">
+                        <a href="/HouseDetail/{{ house.id }}">
+                            <img src="/media/{{ house.master_img }}" width="160" height="117" border="0"/>
+                        </a>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="/HouseDetail/{{ house.id }}" class="PropertyName">{{ house.title }}</a>
+                        </p>
+                        <p>小区：{{ house.plot_name }}</p>
+                        <p>面积：{{ house.acreage }}</p>
+                        <p>户型：{{ house.door_model }}室</p>
+                        <p>产权类型：<a href="javascript:void;">{% if house.is_new %}[新房]{% else %}[二手房]{% endif %}</a> {{ house.get_house_type_display }}</p>
+                    </td>
+                    <td align="center">
+                        <p>
+                            <span class="PropertyPrice">{{ house.price }}</span>元/平米
+                            <br>
+                            总价：<span class="PropertyPrice">{{ house.total_prices }}</span>万
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
+
+{##}
+{#            <tr height="40" class="tr-bgclor">#}
+{#                <td width="30" colspan="3">#}
+{#                    <div class="span8" id="page">#}
+{#                        <a href="#">尾页</a>#}
+{#                        <a href="#">下一页</a>#}
+{#                        <a href="#">2</a>#}
+{#                        <a href="#">1</a>#}
+{#                        <a href="#">上一页</a>#}
+{#                        <a href="#">第一页</a>#}
+{##}
+{#                    </div>#}
+{#                </td>#}
+{##}
+{#            </tr>#}
+        </table>
+
+
+    </div>
+    <!--楼盘列表结束-->
+
+
+{% endblock main-body %}
+
+{% block main-script %}{% endblock main-script %}
+
+
+
+
+	
+	

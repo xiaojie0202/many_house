@@ -1,0 +1,44 @@
+
+.ReleaseProperty{
+	background-color:#87ceeb;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+
+#Right{
+	width:700px;
+	float:right;
+	margin:0 0 20px 0;
+	padding:20px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+
+.releaseProperty-title h4{
+	color:#87ceeb;
+	margin:0 0 10px 20px;
+}
+.releaseProperty-title{
+	width:700px;
+	margin:0 0 20px 0;
+	border-bottom:2px solid #87ceeb;
+}
+.span12{
+	width:960px;
+}
+
+/*发布楼盘开始*/
+#releaseProperty img{
+	float:left;
+}
+.IntroductionTxt{
+	width:520px;
+}
+.Upload{
+	float:right;
+}

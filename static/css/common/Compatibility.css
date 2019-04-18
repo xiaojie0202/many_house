@@ -1,0 +1,164 @@
+.all-IE{property:value\9;}
+:root .IE-9{property:value\0/;}
+.gte-IE-8{property:value\0;}
+.lte-IE-7{*property:value;}
+.IE-7{+property:value;}
+.IE-6{_property:value;}
+.not-IE{property//:value;}
+@-moz-document url-prefix() { .firefox{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
+@media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }
+
+
+
+
+@charset "utf-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color:#000;
+	background:#fff;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+	display: inline-block;
+*display: inline;
+*zoom: 1;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+	font:12px/1.5 tahoma, arial, Hiragino Sans GB, "宋体", \5b8b\4f53;
+}
+input, select, textarea {
+	font-size:100%;
+}
+/* 去掉各Table  cell 的边距并让其边重合 */
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+/* IE bug fixed: th 不继承 text-align*/
+th {
+	text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset, img {
+	border:0; vertical-align:top;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+	display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+	border:0;
+	font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+	text-decoration:line-through;
+}
+address, caption, cite, code, dfn, em, th, var {
+	font-style:normal;
+	font-weight:500;
+}
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+	list-style:none;
+}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+	text-align:left;
+}
+
+q:before, q:after {
+	content:'';
+}
+/* 统一上标和下标 */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a {
+	color:#2a5ea5;
+}
+a:hover {
+	color:#ff5203;
+	text-decoration:underline;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+	text-decoration:none;
+}
+/* 清理浮动 */
+.fn-clear:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+.fn-clear {
+	zoom:1; /* for IE6 IE7 */
+}
+/* 隐藏, 通常用来与 JS 配合 */
+body .fn-hide {
+	display:none;
+}
+/* 设置内联, 减少浮动带来的bug */
+.fn-left, .fn-right {
+	display:inline;
+}
+.fn-left {
+	float:left;
+}
+.fn-right {
+	float:right;
+}
+/* 单行文字溢出时出现省略号，需设定宽度 */ 
+.fn-text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* 简单的渐变 */ 
+.fn-linear {
+	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f1f1f1));
+	background: -moz-linear-gradient(top, #fcfcfc, #f1f1f1);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f1f1f1');
+	background:-o-linear-gradient(top, #fcfcfc, #f1f1f1);
+	background:-ms-linear-gradient(top, #fcfcfc, #f1f1f1);
+	background: linear-gradient(top, #fcfcfc, #f1f1f1);
+}
+/* 浅色的渐变 */
+.fn-linear-light {
+	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));
+	background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
+	background: -ms-linear-gradient(top, #fcfcfc, #f9f9f9);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
+	background:-o-linear-gradient(top, #fcfcfc, #f9f9f9);
+	background: linear-gradient(top, #fcfcfc, #f9f9f9);
+}
+/* 人民币符号 */
+.fn-rmb {
+	font-family: arial;
+	font-style: normal;
+	padding-right: 4px;
+}

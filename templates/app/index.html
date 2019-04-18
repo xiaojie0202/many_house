@@ -1,0 +1,1227 @@
+{% extends 'app/main.html' %}
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}多多房-首页{% endblock title %}
+
+{% block main-style %}
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+
+    <style>
+        #part-search {
+            width: 100% !important;
+            height: 85px;
+        }
+    </style>
+{% endblock main-style %}
+
+{% block body-style %}{% endblock body-style %}
+
+{% block main-body %}
+    <!--轮换图开始-->
+    <div class="carousel slide" id="carousel-325862">
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carousel-325862">
+            </li>
+            <li data-slide-to="1" data-target="#carousel-325862">
+            </li>
+            <li data-slide-to="2" data-target="#carousel-325862">
+            </li>
+        </ol>
+        <div class="carousel-inner">
+            <!--图1-->
+            <div class="item active">
+                <a href="#"><img src="/static/img/focus/focus03.png" border="0"></a>
+                <div class="carousel-caption">
+                    <h4>
+                        图1
+                    </h4>
+                    <p>
+                        实景图
+                    </p>
+                </div>
+            </div>
+
+            <!--图2-->
+            <div class="item">
+                <a href="#"><img src="/static/img/focus/focus02.png"></a>
+                <div class="carousel-caption">
+                    <h4>
+                        图2
+                    </h4>
+                    <p>
+                        效果图
+                    </p>
+                </div>
+            </div>
+
+            <!--图3-->
+            <div class="item">
+                <a href="#"><img src="/static/img/focus/focus01.png" border="0"></a>
+                <div class="carousel-caption">
+                    <h4>
+                        图3
+                    </h4>
+                    <p>
+                        样板间
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a data-slide="prev" href="#carousel-325862" class="left carousel-control">‹</a> <a data-slide="next"
+                                                                                            href="#carousel-325862"
+                                                                                            class="right carousel-control">›</a>
+    </div>
+    <!--轮换图结束-->
+
+
+    <div class="row-fluid" id="part1">
+
+        <!--搜索部开始分-->
+        <div class="span12" id="part-search">
+
+            <div class="tab-pane active" id="panel-newhouse">
+                <form action="/search" method="post">
+                    <div class="input-append">
+                        <select id="inputInfo" style="width:100px; margin-right:5px;" name="area_name">
+                            {% if request.user.is_authenticated %}
+                                {% for area in request.user.myuser.area.area_set.all %}
+                                    <option value="{{ area.name }}">{{ area.name }}</option>
+                                {% endfor %}
+                            {% else %}
+                                <option>未登陆</option>
+                            {% endif %}
+                        </select>
+
+                        <select id="inputInfo" style="width:100px; margin-right:5px;" name="url">
+                            <option value="/NewHouseList">新房</option>
+                            <option value="/OldHouseList">二手房</option>
+                        </select>
+
+                        <select id="inputInfo" style="width:100px; margin-right:5px;" name="price">
+                            <option value="0,6000">6000以下</option>
+                            <option value="6000,7000">6000-7000</option>
+                            <option value="7000.8000">7000-8000</option>
+                            <option value="8000,10000">8000-1万</option>
+                            <option value="10000,12000">1万-1.2万</option>
+                            <option value="12000, 999999">1.2万以上</option>
+                        </select>
+
+                        <input class="span8" id="appendedInputButton" type="text" name="title">
+                        <button class="btn btn-info" type="submit">搜索</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--搜索部分结束-->
+
+
+    </div>
+
+
+
+
+
+    <!--第二推荐部分开始-->
+    <div class="row-fluid">
+        <!--热销新房、精品新房部分开始-->
+        <div class="span8" id="NewHomes">
+
+            <div class="tabbable" id="tabs-823704">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-807802" data-toggle="tab">最新新房</a>
+                    </li>
+                    <li>
+                        <a href="#panel-205350" data-toggle="tab">最新二手房</a>
+                    </li>
+                </ul>
+
+                <!--选项卡内容-->
+                <div class="tab-content" id="NewHomes-content">
+                    <!--热销新房-->
+                    <div class="tab-pane active" id="panel-807802">
+                        <table>
+                            <tr align="center" height="100">
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/HotNewHome/HotNewHome01.jpg"
+                                        width="120" height="90" border="0"/></a>
+                                </td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/HotNewHome/HotNewHome02.jpg"
+                                        width="120" height="90" border="0"/></a>
+                                </td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/HotNewHome/HotNewHome03.jpg"
+                                        width="120" height="90" border="0"/></a>
+                                </td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/HotNewHome/HotNewHome04.jpg"
+                                        width="120" height="90" border="0"/></a>
+                                </td>
+                            </tr>
+                            <tr align="left">
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>滨湖-无锡海岸城</p>
+                                        <p class="PropertyPrice">均价 9300元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>惠山-沁春园</p>
+                                        <p class="PropertyPrice">均价 7500元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>锡山-红豆香江豪庭</p>
+                                        <p class="PropertyPrice">均价 6900元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>锡山-无锡碧桂园</p>
+                                        <p class="PropertyPrice">均价 7000元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <!--精品新房-->
+                    <div class="tab-pane" id="panel-205350">
+                        <table>
+                            <tr align="center" height="100">
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/BoutiqueNewHome/BoutiqueNewHome01.jpg" width="120"
+                                        height="90"
+                                        border="0"/></a></td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/BoutiqueNewHome/BoutiqueNewHome02.jpg" width="120"
+                                        height="90"
+                                        border="0"/></a></td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/BoutiqueNewHome/BoutiqueNewHome03.jpg" width="120"
+                                        height="90"
+                                        border="0"/></a></td>
+                                <td width="170" valign="top"><a href="#"><img
+                                        src="/static/img/BoutiqueNewHome/BoutiqueNewHome04.jpg" width="120"
+                                        height="90"
+                                        border="0"/></a></td>
+                            </tr>
+                            <tr align="left">
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>滨湖-无锡海岸城</p>
+                                        <p class="PropertyPrice">均价 9300元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>惠山-沁春园</p>
+                                        <p class="PropertyPrice">均价 7500元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>锡山-红豆香江豪庭</p>
+                                        <p class="PropertyPrice">均价 6900元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                                <td class="NewHomeslink">
+                                    <a href="#">
+                                        <p>锡山-无锡碧桂园</p>
+                                        <p class="PropertyPrice">均价 7000元/平米</p>
+                                        <p>146套新房在售</p>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <!--选项卡内容结束-->
+            </div>
+            <!--选项卡结束-->
+        </div>
+        <!--热销新房、精品新房结束-->
+
+        <!--新房导购开始-->
+        <div class="span4" id="ShoppingGuide">
+            <div class="ShoppingGuide-title">
+                <h5>新房导购</h5>
+                <a href="PropertyInformation/PropertyInformation.htm">更多>></a>
+            </div>
+
+            <ul>
+                <li><a href="#">三月买房看遍 新城尚东区133平米实</a></li>
+                <li><a href="#">无锡碧桂园二期精装洋房开盘再度热</a></li>
+                <li><a href="#">融创理想里大户型正在火热上演中！</a></li>
+                <li><a href="#">华润凯旋门 千载贵胄地 缔造世界湖居</a></li>
+                <li><a href="#">阳光100：纯粹A区 高端定位</a></li>
+                <li><a href="#">十年成就梦想生活 无锡万科4盘齐发</a></li>
+                <li><a href="#">买123平得145平，尚东区珍藏户型</a></li>
+                <li><a href="#">【九龙仓玺园】：95-135平米 样</a></li>
+            </ul>
+
+        </div>
+        <!--新房导购结束-->
+    </div>
+    <!--第二推荐部分结束-->
+
+    <!--关于楼盘部分开始-->
+    <div class="row-fluid" id="part5">
+        <!--楼盘大全开始-->
+        <div class="span9" id="AllProperty">
+
+            <div class="part5-title">
+                <h5>楼盘大全</h5>
+                <a href="PropertyInformation/PropertyInformation.htm">更多>></a>
+            </div>
+            <!--楼盘大全左边部分开始-->
+            <div class="span4" id="AllProperty01">
+                <table>
+                    <tr height="25">
+                        <td width="40"><span class="PropertyArea">锡山区</span></td>
+                        <td width="90"><a href="#" class="PropertyName">无锡碧桂园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">金港福景园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">新区</span></td>
+                        <td><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                        <td><span class="PropertyPrice">7600元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                        <td><span class="PropertyPrice">11000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">北塘区</span></td>
+                        <td><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                        <td><span class="PropertyPrice">7500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">山湾水榭</a></td>
+                        <td><span class="PropertyPrice">17800元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">惠山区</span></td>
+                        <td><a href="#" class="PropertyName">复地公园城邦</a></td>
+                        <td><span class="PropertyPrice">价格待定</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">南长区</span></td>
+                        <td><a href="#" class="PropertyName">茂业天地观园</a></td>
+                        <td><span class="PropertyPrice">1000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">锡山区</span></td>
+                        <td><a href="#" class="PropertyName">鹅湖一号</a></td>
+                        <td><span class="PropertyPrice">5200元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">蠡湖国际公寓</a></td>
+                        <td><span class="PropertyPrice">9000元/㎡</span></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--楼盘大全左边部分结束-->
+
+            <!--楼盘大全中间部分开始-->
+            <div class="span4" id="AllProperty02">
+                <table>
+                    <tr height="25">
+                        <td width="40"><span class="PropertyArea">锡山区</span></td>
+                        <td width="90"><a href="#" class="PropertyName">无锡碧桂园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">金港福景园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">新区</span></td>
+                        <td><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                        <td><span class="PropertyPrice">7600元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                        <td><span class="PropertyPrice">11000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">北塘区</span></td>
+                        <td><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                        <td><span class="PropertyPrice">7500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">山湾水榭</a></td>
+                        <td><span class="PropertyPrice">17800元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">惠山区</span></td>
+                        <td><a href="#" class="PropertyName">复地公园城邦</a></td>
+                        <td><span class="PropertyPrice">价格待定</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">南长区</span></td>
+                        <td><a href="#" class="PropertyName">茂业天地观园</a></td>
+                        <td><span class="PropertyPrice">1000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">锡山区</span></td>
+                        <td><a href="#" class="PropertyName">鹅湖一号</a></td>
+                        <td><span class="PropertyPrice">5200元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">蠡湖国际公寓</a></td>
+                        <td><span class="PropertyPrice">9000元/㎡</span></td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <!--楼盘大全中间部分结束-->
+
+            <!--楼盘大全右边部分开始-->
+            <div class="span4" id="AllProperty03">
+
+                <table>
+                    <tr height="25">
+                        <td width="40"><span class="PropertyArea">锡山区</span></td>
+                        <td width="90"><a href="#" class="PropertyName">无锡碧桂园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">金港福景园</a></td>
+                        <td><span class="PropertyPrice">6500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">新区</span></td>
+                        <td><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                        <td><span class="PropertyPrice">7600元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                        <td><span class="PropertyPrice">11000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">北塘区</span></td>
+                        <td><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                        <td><span class="PropertyPrice">7500元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">江阴市</span></td>
+                        <td><a href="#" class="PropertyName">山湾水榭</a></td>
+                        <td><span class="PropertyPrice">17800元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">惠山区</span></td>
+                        <td><a href="#" class="PropertyName">复地公园城邦</a></td>
+                        <td><span class="PropertyPrice">价格待定</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">南长区</span></td>
+                        <td><a href="#" class="PropertyName">茂业天地观园</a></td>
+                        <td><span class="PropertyPrice">1000元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">锡山区</span></td>
+                        <td><a href="#" class="PropertyName">鹅湖一号</a></td>
+                        <td><span class="PropertyPrice">5200元/㎡</span></td>
+                    </tr>
+                    <tr height="25">
+                        <td><span class="PropertyArea">滨湖区</span></td>
+                        <td><a href="#" class="PropertyName">蠡湖国际公寓</a></td>
+                        <td><span class="PropertyPrice">9000元/㎡</span></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!--楼盘大全右边部分结束-->
+
+        </div>
+        <!--楼盘大全结束-->
+
+        <!--楼盘排行开始-->
+        <div class="span3" id="PropertyRanking">
+            <div class="part5-title">
+                <h5>楼盘热门排行</h5>
+            </div>
+
+            <!--排行开始-->
+            <div class="Ranking">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <th></th>
+                    <th>楼盘名称</th>
+                    <th>价格</th>
+                    </thead>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <a href="#">复地公园城邦</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">价格待定</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a href="#">茂业天地观园</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">11000元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <a href="#">盈科花园</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">5000元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            <a href="#">明鸿春晓</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">8200元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            <a href="#">无锡碧桂园</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">6500元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            <a href="#">金港福景园</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">6500元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            7
+                        </td>
+                        <td>
+                            <a href="#">美新玫瑰大道</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">7600元/㎡</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            <a href="#">魅力万科城酩悦</a>
+                        </td>
+                        <td>
+                            <span class="PropertyPrice">11000元/㎡</span>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+        <!--楼盘排行结束-->
+    </div>
+    <!--关于楼盘部分结束-->
+
+    <!--别墅、商铺、写字楼开始-->
+    <div class="row-fluid" id="part6">
+        <div class="span12">
+
+            <!--tab开始-->
+            <div class="tabbable" id="tabs-298473">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-526816" data-toggle="tab">别墅</a>
+                    </li>
+                    <li>
+                        <a href="#panel-907049" data-toggle="tab">商铺</a>
+                    </li>
+                    <li>
+                        <a href="#panel-907048" data-toggle="tab">写字楼</a>
+                    </li>
+                </ul>
+
+                <!--选项卡内容开始-->
+                <div class="tab-content">
+                    <!--别墅内容开始-->
+                    <div class="tab-pane active" id="panel-526816">
+                        <!--热门别墅-->
+                        <div class="span4" id="HotVilla">
+                            <div class="hot-title">
+                                <span>热门别墅</span>
+                                <a href="Property/Property.html">更多>></a>
+                            </div>
+                            <table>
+                                <tr height="110">
+                                    <td valign="top" width="135">
+                                        <a href="#"><img src="/static/img/HotVilla/hotVilla01.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">御景名仕苑</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                                <tr height="105">
+                                    <td valign="top">
+                                        <a href="#"><img src="/static/img/HotVilla/hotVilla02.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">复地公园城邦</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!--别墅楼盘-->
+                        <div class="span4" id="VillaProperty">
+                            <table>
+                                <tr align="left" height="30" class="table-title">
+                                    <td class="td-Propertyname">楼盘名称</td>
+                                    <td>价格</td>
+                                    <td class="td-area">区域</td>
+                                </tr>
+                                <tr height="25">
+                                    </td>
+                                    <td width="120" class="td-Propertyname"><a href="#"
+                                                                               class="PropertyName">无锡碧桂园</a>
+                                    </td>
+                                    <td width="100"><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td width="40" class="td-area"><span class="PropertyArea">锡山区</span>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">金港福景园</a></td>
+                                    <td><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                                    <td><span class="PropertyPrice">7600元/㎡</span></td>
+                                    <td><span class="PropertyArea">新区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                                    <td><span class="PropertyPrice">11000元/㎡</span></td>
+                                    <td><span class="PropertyArea">滨湖区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                                    <td><span class="PropertyPrice">7500元/㎡</span></td>
+                                    <td><span class="PropertyArea">北塘区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">山湾水榭</a></td>
+                                    <td><span class="PropertyPrice">17800元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">茂业天地观园</a></td>
+                                    <td><span class="PropertyPrice">1000元/㎡</span></td>
+                                    <td><span class="PropertyArea">南长区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <!--最新别墅-->
+                        <div class="span4">
+                            <div class="new-title">
+                                <span>最新别墅</span>
+                                <a href="Property/Property.html">更多>></a>
+                            </div>
+                            <table>
+                                <tr height="110">
+                                    <td valign="top" width="135">
+                                        <a href="#"><img src="/static/img/NewVilla/newVilla01.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">御景名仕苑</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                                <tr height="105">
+                                    <td valign="top">
+                                        <a href="#"><img src="/static/img/NewVilla/newVilla02.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">复地公园城邦</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--别墅内容开始-->
+
+                    <!--商铺内容开始-->
+                    <div class="tab-pane" id="panel-907049">
+                        <!--商铺楼盘-->
+                        <div class="span4" id="ShopProperty">
+                            <table>
+                                <tr align="left" height="30" class="table-title">
+                                    <td class="td-Propertyname">楼盘名称</td>
+                                    <td>价格</td>
+                                    <td class="td-area">区域</td>
+                                </tr>
+                                <tr height="25">
+                                    </td>
+                                    <td width="120" class="td-Propertyname"><a href="#"
+                                                                               class="PropertyName">无锡碧桂园</a>
+                                    </td>
+                                    <td width="100"><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td width="40" class="td-area"><span class="PropertyArea">锡山区</span>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">金港福景园</a></td>
+                                    <td><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                                    <td><span class="PropertyPrice">7600元/㎡</span></td>
+                                    <td><span class="PropertyArea">新区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                                    <td><span class="PropertyPrice">11000元/㎡</span></td>
+                                    <td><span class="PropertyArea">滨湖区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                                    <td><span class="PropertyPrice">7500元/㎡</span></td>
+                                    <td><span class="PropertyArea">北塘区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">山湾水榭</a></td>
+                                    <td><span class="PropertyPrice">17800元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">茂业天地观园</a></td>
+                                    <td><span class="PropertyPrice">1000元/㎡</span></td>
+                                    <td><span class="PropertyArea">南长区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <!--商铺资讯-->
+                        <div class="span4" id="ShopInfo">
+                            <div class="ShopInfo-title">
+                                <span>商铺资讯</span>
+                                <a href="PropertyInformation/PropertyInformation.htm">更多>></a>
+                            </div>
+
+                            <p><a href="#">任志强再"开炮":成都房价还要涨 商业地产多</a></p>
+                            <p><a href="#">新华视点:20%个税政策为何“悬空”?</a></p>
+                            <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                            <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                            <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地/a></p>
+                            <p><a href="#">商铺被停车场挡住门 规划部门希望业主起诉</a></p>
+                            <p><a href="#">北京大兴商业地产上演“非诚勿扰” 被疑炒</a></p>
+                            <p><a href="#">【九龙仓玺园】：95-135平米 样</a></p>
+                            <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+
+                        </div>
+
+                        <!--热门商铺-->
+                        <div class="span4" id="HotShop">
+                            <div class="HotShop-title">
+                                <span>热门商铺</span>
+                                <a href="Property/Property.html">更多>></a>
+                            </div>
+                            <table>
+                                <tr height="110">
+                                    <td valign="top" width="135">
+                                        <a href="#"><img src="/static/img/HotShop/hotShop01.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">九龙仓星汇天地</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                                <tr height="105">
+                                    <td valign="top">
+                                        <a href="#"><img src="/static/img/HotShop/hotShop02.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">无锡万健商业广场</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!--商铺内容结束-->
+
+                    <!--写字楼内容开始-->
+                    <div class="tab-pane" id="panel-907048">
+                        <!--写字楼投资-->
+                        <div class="span4" id="OfficeInvestment">
+                            <div class="OfficeInvestment-title">
+                                <span>写字楼投资</span>
+                                <a href="PropertyInformation/PropertyInformation.htm">更多>></a>
+                            </div>
+
+                            <div class="OfficeInve">
+                                <p><a href="#">任志强再"开炮":成都房价还要涨 商业地产多</a></p>
+                                <p><a href="#">新华视点:20%个税政策为何“悬空”?</a></p>
+                                <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                                <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                                <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地/a></p>
+                                <p><a href="#">商铺被停车场挡住门 规划部门希望业主起诉</a></p>
+                                <p><a href="#">北京大兴商业地产上演“非诚勿扰” 被疑炒</a></p>
+                                <p><a href="#">【九龙仓玺园】：95-135平米 样</a></p>
+                                <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                            </div>
+
+                        </div>
+
+                        <!--热门写字楼-->
+                        <div class="span4" id="HotOffice">
+                            <div class="HotOffice-title">
+                                <span>热门写字楼</span>
+                                <a href="Property/Property.html">更多>></a>
+                            </div>
+                            <table>
+                                <tr height="110">
+                                    <td valign="top" width="135">
+                                        <a href="#"><img src="/static/img/HotOffice/hotOffice01.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">五洲国际广场银河城</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                                <tr height="105">
+                                    <td valign="top">
+                                        <a href="#"><img src="/static/img/HotOffice/hotOffice02.jpg" width="125"
+                                                         height="85"
+                                                         border="0"/></a>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">无锡万健商业广场</a></p>
+                                        <p>平均总价：价格待定</p>
+                                        <p>建筑形式：低层</p>
+                                        <p>地址：前洲幼儿园西侧</P>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!--写字楼楼盘-->
+                        <div class="span4" id="OfficeProperty">
+                            <table>
+                                <tr align="left" height="30" class="table-title">
+                                    <td class="td-Propertyname">楼盘名称</td>
+                                    <td>价格</td>
+                                    <td class="td-area">区域</td>
+                                </tr>
+                                <tr height="25">
+                                    </td>
+                                    <td width="120" class="td-Propertyname"><a href="#"
+                                                                               class="PropertyName">无锡碧桂园</a>
+                                    </td>
+                                    <td width="100"><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td width="40" class="td-area"><span class="PropertyArea">锡山区</span>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">金港福景园</a></td>
+                                    <td><span class="PropertyPrice">6500元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                                    <td><span class="PropertyPrice">7600元/㎡</span></td>
+                                    <td><span class="PropertyArea">新区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                                    <td><span class="PropertyPrice">11000元/㎡</span></td>
+                                    <td><span class="PropertyArea">滨湖区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                                    <td><span class="PropertyPrice">7500元/㎡</span></td>
+                                    <td><span class="PropertyArea">北塘区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">山湾水榭</a></td>
+                                    <td><span class="PropertyPrice">17800元/㎡</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">茂业天地观园</a></td>
+                                    <td><span class="PropertyPrice">1000元/㎡</span></td>
+                                    <td><span class="PropertyArea">南长区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span class="PropertyPrice">价格待定</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+                    <!--写字楼内容结束-->
+
+                </div>
+                <!--选项卡内容结束-->
+
+            </div>
+            <!--tab结束-->
+
+        </div>
+    </div>
+    <!--别墅、商铺、写字楼结束-->
+
+    <!--二手房、租房开始-->
+    <div class="row-fluid" id="part7">
+        <div class="span12">
+            <div class="tabbable" id="tabs-932533">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-430111" data-toggle="tab">二手房</a>
+                    </li>
+                    <li>
+                        <a href="#panel-451213" data-toggle="tab">租房</a>
+                    </li>
+                </ul>
+
+                <!--选项卡内容部分开始-->
+                <div class="tab-content">
+                    <!--二手房内容开始-->
+                    <div class="tab-pane active" id="panel-430111">
+                        <!--二手房楼盘-->
+                        <div class="span4" id="ShopProperty">
+                            <table>
+                                <tr align="left" height="30" class="table-title">
+                                    <td class="td-Propertyname">楼盘名称</td>
+                                    <td>房型</td>
+                                    <td>价格</td>
+                                    <td class="td-area">区域</td>
+                                </tr>
+                                <tr height="25">
+                                    </td>
+                                    <td width="110" class="td-Propertyname"><a href="#"
+                                                                               class="PropertyName">无锡碧桂园</a>
+                                    </td>
+                                    <td width="80"><span>2室1厅</span></td>
+                                    <td width="50"><span class="PropertyPrice">48万</span></td>
+                                    <td width="40" class="td-area"><span class="PropertyArea">锡山区</span>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">金港福景园</a></td>
+                                    <td><span>1室1厅</span></td>
+                                    <td><span class="PropertyPrice">36万</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">美新玫瑰大道</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">50万</span></td>
+                                    <td><span class="PropertyArea">新区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">魅力万科城酩悦</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">40万</span></td>
+                                    <td><span class="PropertyArea">滨湖区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">元一蔚蓝观邸</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">38万</span></td>
+                                    <td><span class="PropertyArea">北塘区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">山湾水榭</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">42万</span></td>
+                                    <td><span class="PropertyArea">江阴市</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">43万</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">茂业天地观园</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">48万</span></td>
+                                    <td><span class="PropertyArea">南长区</span></td>
+                                </tr>
+                                <tr height="25">
+                                    <td class="td-Propertyname"><a href="#" class="PropertyName">复地公园城邦</a></td>
+                                    <td><span>2室1厅</span></td>
+                                    <td><span class="PropertyPrice">45万</span></td>
+                                    <td><span class="PropertyArea">惠山区</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <!--最新二手房-->
+                        <div class="span4" id="New Second-handHouse">
+                            <div class="NewSecond-hand-title">
+                                <span>最新二手房</span>
+                                <a href="Property/Property.html">更多>></a>
+                            </div>
+                            <table>
+                                <tr height="110">
+                                    <td valign="middle" width="150">
+                                        <a href="#"><img src="/static/img/SecondHandHouse/secondHandHouse01.jpg"
+                                                         width="125"
+                                                         height="85" border="0"/></a>
+                                    </td>
+                                    <td valign="middle">
+                                        <a href="#"><img src="/static/img/SecondHandHouse/secondHandHouse02.jpg"
+                                                         width="125"
+                                                         height="85" border="0"/></a>
+                                    </td>
+
+                                </tr>
+                                <tr height="105">
+                                    <td valign="top">
+                                        <p><a href="#">五洲国际广场银河城</a></p>
+                                        <p class="PropertyPrice">价格：48万</p>
+                                        <p>房型：2室1厅</p>
+                                        <p>区域：崇安区</P>
+                                    </td>
+                                    <td valign="top">
+                                        <p><a href="#">无锡万健商业广场</a></p>
+                                        <p class="PropertyPrice">价格：45万</p>
+                                        <p>房型：1室1厅</p>
+                                        <p>区域：南长区</P>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!--二手房资讯-->
+                        <div class="span4" id="SecondHandInfo">
+                            <div class="SecondHandInfo-title">
+                                <span>二手房资讯</span>
+                                <a href="PropertyInformation/PropertyInformation.htm">更多>></a>
+                            </div>
+
+                            <div class="secondHandinfo">
+                                <p><a href="#">二手房经纪避税新花样 不满五年能把税做成零</a></p>
+                                <p><a href="#">房产中介带人上门打砸同行</a></p>
+                                <p><a href="#">新购二手房被胶水堵门 疑因挂牌中介纠纷所</a></p>
+                                <p><a href="#">网上频频出现二房东身影 拼房与合租问题多</a></p>
+                                <p><a href="#">调控压力促房企产品线变阵 纷纷加码商业地</a></p>
+                                <p><a href="#">二手房买家不再执着免个税房 买家爽手入市</a></p>
+                                <p><a href="#">北京楼市成交量继续走低 新房涨价二手房降</a></p>
+                                <p><a href="#">二手房热销促使翻新装修需求增大</a></p>
+                                <p><a href="#">二手房房价涨幅榜太湖新城领跑 已入住达30</a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--二手房内容结束-->
+
+                    <!--租房内容开始-->
+                    <div class="tab-pane" id="panel-451213">
+                        <!--租房-->
+                        <table>
+                            <tr>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse01.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse02.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse03.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse04.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse05.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                                <td width="155"><a href="#"><img src="/static/img/RentHouse/rentHouse06.jpg"
+                                                                 width="125"
+                                                                 height="85" border="0"></a></td>
+                            </tr>
+                            <tr height="105">
+                                <td valign="top">
+                                    <p><a href="#">五洲国际广场银河城</a></p>
+                                    <p class="PropertyPrice">价格：2000元/月</p>
+                                    <p>房型：2室1厅</p>
+                                    <p>区域：崇安区</P>
+                                </td>
+                                <td valign="top">
+                                    <p><a href="#">无锡万健商业广场</a></p>
+                                    <p class="PropertyPrice">价格：1400元/月</p>
+                                    <p>房型：1室1厅</p>
+                                    <p>区域：南长区</P>
+                                </td>
+                                <td valign="top">
+                                    <p><a href="#">五洲国际广场银河城</a></p>
+                                    <p class="PropertyPrice">价格：1200元/月</p>
+                                    <p>房型：2室1厅</p>
+                                    <p>区域：崇安区</P>
+                                </td>
+                                <td valign="top">
+                                    <p><a href="#">无锡万健商业广场</a></p>
+                                    <p class="PropertyPrice">价格：1800元/月</p>
+                                    <p>房型：1室1厅</p>
+                                    <p>区域：南长区</P>
+                                </td>
+                                <td valign="top">
+                                    <p><a href="#">五洲国际广场银河城</a></p>
+                                    <p class="PropertyPrice">价格：1000元/月</p>
+                                    <p>房型：2室1厅</p>
+                                    <p>区域：崇安区</P>
+                                </td>
+                                <td valign="top">
+                                    <p><a href="#">无锡万健商业广场</a></p>
+                                    <p class="PropertyPrice">价格：1500元/月</p>
+                                    <p>房型：1室1厅</p>
+                                    <p>区域：南长区</P>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--租房内容结束-->
+
+                </div>
+                <!--选项卡内容结束-->
+
+            </div>
+        </div>
+    </div>
+
+{% endblock main-body %}
+
+{% block main-script %}{% endblock main-script %}

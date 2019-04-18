@@ -1,0 +1,358 @@
+
+/*搜索框*/
+
+#appendedInputButton{
+	box-shadow:0 0 10px #cccccc inset;
+	-webkit-box-shadow:0 0 10px #cccccc inset;
+	-moz-box-shadow:0 0 10px #cccccc inset;
+}
+#searchtext{
+	float:right;
+	width:520px;
+	height:40px;
+	margin:10px 0 0 0;
+}
+.input-append{
+	height:40px;
+}
+.btn btn-info{
+	float:right;
+	margin-right:0;
+}
+
+/*面包屑导航*/
+#bread{
+	height:30px;
+	line-height:30px;
+	float:left;
+	margin-left:0;
+}
+
+/*第一部分，楼盘简述开始*/
+#propertyDescription{
+	margin-left:0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+/*标题*/
+.property-title{
+	margin:10px 0 10px 20px;
+}
+
+/*详细导航，链接到单独的详细页面，房源、户型、相册......*/
+.Detailed-navigation{
+	height:30px;
+	width:960px;
+	margin:20px 0 30px 0;
+	background-color:#87ceeb;
+}
+.Detailed-navigation ul li{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	width:100px;
+	line-height:30px;
+}
+.current{
+	background-color:#FFDEAD;
+}
+.Detailed-navigation ul li a{
+	color:#FFFFFF;
+	display:block;
+}
+.Detailed-navigation ul li a:hover{
+	text-decoration:none;
+	background-color:#40E0D0;
+}
+
+
+
+/*焦点图*/
+#focus{
+	margin:0 20px 0 20px;
+	width:450px;
+}
+.propertyPrice{
+	color:#FF6600;
+	font-size:16px;
+	font-weight:bold;
+}
+
+/*楼盘简介*/
+#propertyIntroduction{
+	width:420px;
+	margin:0 10px 0 10px;
+	padding:0 0 10px 0;
+}
+.property-tel{
+	width:400px;
+	height:48px;
+	border:1px solid #87ceeb;
+	background-color:#C5F3F5;
+	margin:10px 0 10px 0;
+}
+.property-tel img{
+	float:left;
+}
+
+
+/*最新动态*/
+#part2{
+	padding:0;
+	margin-left:0;
+}
+
+#LatestNews{
+	width:475px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:10px 10px 10px 0;
+}
+.LatestNews-title,.propertyDetail-title{
+	margin:10px;
+	height:40px;
+	line-height:40px;
+	border-bottom:2px solid #87ceeb;
+}
+.LatestNews-title h5,.propertyDetail-title h5{
+	float:left;
+	margin-left:10px;
+}
+.LatestNews-title a,.propertyDetail-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#LatestNews table{
+	margin:10px;
+}
+#LatestNews table tr{
+	border-bottom:1px dashed #e7e7e7;
+}
+#LatestNews table tr:hover{
+	border-bottom:1px solid #87ceeb;
+	background-color:#e7e7e7;
+}
+.News-title{
+	font-size:16px;
+	font-weight:bold;
+}
+.first-td{
+	color:#FF6600;
+}
+
+/*楼盘详情*/
+#propertyDetail{
+	width:960px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:10px 0 10px 0;
+}
+.propertyOutline{
+	margin:15px 10px 10px 10px;
+	border-bottom:1px dashed #e7e7e7;
+}
+.propertyOutline p{
+	margin:10px;
+}
+.propertyOutline span{
+	color:#FF6600;
+}
+#propertyDetail table{
+	margin:20px 20px 20px 20px;
+}
+
+/*楼盘相册*/
+#propertyPicture{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin-left:0;
+}
+.propertyPicture-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.propertyPicture-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.propertyPicture-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+.tabbable{
+	margin:10px;
+}
+
+/*实景图*/
+.tab-content table{
+	margin:10px;
+}
+.tab-content table p{
+	color:#0099CC;
+}
+
+/*户型图*/
+#ApartmentPicture{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:10px 0 10px 0;
+}
+.ApartmentPicture-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.ApartmentPicture-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.ApartmentPicture-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+
+/*价格走势*/
+#PriceTrend{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:0 10px 10px 0;
+}
+.PriceTrend-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.PriceTrend-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.PriceTrend-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#PriceTrend img{
+	margin:10px 0 20px 20px;
+}
+
+/*热门楼盘*/
+#hotProperty{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:0 0 10px 0;
+	width:318px;
+}
+.hotProperty-title{
+	margin:10px 10px 0 10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.hotProperty-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.hotProperty-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+.hotProperty-show{
+	margin:0 10px 10px 10px;
+	height:90px;
+	border-bottom:1px dashed #e7e7e7;
+	padding:10px 0 10px 0;
+}
+.PropertyPrice{
+	color:#FF6600;
+	font-size:16px;
+	font-weight:bold;
+}
+.hotProperty-show img{
+	float:left;
+	margin:0 20px 0 10px;
+}
+#hotProperty table{
+	margin:10px 20px 10px 20px;
+}
+.Price{
+	color:#FF6600;
+}
+
+/*电联*/
+#ContactWay{
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	margin:0 0 10px 0;
+}
+.ContactWay-title{
+	margin:10px 10px 0 10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.ContactWay-title h5{
+	margin:0 0 0 10px;
+}
+.ContactWay-left{
+	height:60px;
+	width:400px;
+	margin:30px;
+	float:left;
+}
+.ContactWay-left img{ 
+	float:left;
+	margin:0 30px 0 20px;
+}
+.tel{
+	font-size:16px;
+	font-weight:bold;
+}
+.ContactWay-right{
+	margin:30px 0 30px 50px;
+	width:400px;
+	float:right;
+}

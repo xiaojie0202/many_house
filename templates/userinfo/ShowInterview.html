@@ -1,0 +1,106 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}面谈管理{% endblock title %}
+
+
+{% block user_style %}
+    <link href="/static/css/Subscription.css" rel="stylesheet" type="text/css"/>
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div id="Right" class="span8">
+        <div class="subscription-title">
+            <h4>面谈管理</h4>
+        </div>
+
+        <!--订阅管理开始-->
+        <div id="subscription">
+            <table width="700" cellspacing="0" cellpadding="0" border="0">
+
+                <tr height="40" class="tr-bgclor">
+                    <td align="center">
+                        <span class="date">申请的房屋</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">申请用户</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">申请日期</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">手机号</span>
+                    </td>
+                    <td></td>
+                </tr>
+                {% for interview in interview_obj %}
+                    <tr height="50" valign="middle">
+
+                        <td width="300" align="left">
+                            <p><a href="#" class="subscription-PropertyName">{{ interview.house.title }}</a></p>
+                        </td>
+                        <td width="100" align="center">
+                            <span>{{ interview.user.first_name }}</span>
+                        </td>
+                        <td width="100" align="center">
+                            <span>{{ interview.time|date }}</span>
+                        </td>
+                        {% if interview.is_pass %}
+                            <td width="100" align="center">
+                                <span>{{ interview.user.myuser.phone }}</span>
+                            </td>
+                        {% else %}
+                            <td width="100" align="center"><a onclick="tymt({{ interview.id }})">同意面谈</a></td>
+                        {% endif %}
+
+                    </tr>
+                {% endfor %}
+
+                {#                <tr height="40" class="tr-bgclor">#}
+                {#                    <td width="30" align="center" colspan="5">#}
+                {#                        <div class="span8" id="page">#}
+                {#                            <a href="#">尾页</a>#}
+                {#                            <a href="#">下一页</a>#}
+                {#                            <a href="#">2</a>#}
+                {#                            <a href="#">1</a>#}
+                {#                            <a href="#">上一页</a>#}
+                {#                            <a href="#">第一页</a>#}
+                {##}
+                {#                        </div>#}
+                {#                    </td>#}
+                {##}
+                {#                </tr>#}
+            </table>
+        </div>
+        <!--订阅管理结束-->
+
+    </div>
+
+{% endblock user_body %}
+
+
+
+{% block main-script %}
+    <script>
+        function tymt(interviewID) {
+            $.ajax({
+                url: '/tymt',
+                type: 'POST',
+                data: {interviewID: interviewID},
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.status) {
+                        window.location.reload()
+                    }
+                }
+            })
+        }
+    </script>
+{% endblock main-script %}

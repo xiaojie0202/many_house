@@ -1,0 +1,159 @@
+{% extends 'app/main.html' %}
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}多多房-房屋详情{% endblock title %}
+
+{% block main-style %}
+    <link href="/static/css/PropertyDetail.css" rel="stylesheet" type="text/css"/>
+{% endblock main-style %}
+
+{% block body-style %}{% endblock body-style %}
+
+{% block main-body %}
+    <!--面包屑导航开始-->
+    <div id="bread" class="span12">
+        <a href="/">多多房</a>
+        <span>></span>
+        <a>{{ house_obj.area.name }}</a>
+        <span>></span>
+        <span>{{ house_obj.plot_name }}</span>
+    </div>
+    <!--面包屑导航结束-->
+
+    <!--第一部分，楼盘简述开始-->
+    <div id="propertyDescription" class="span12">
+        <!--楼盘标题-->
+        <div class="property-title">
+            <h3><span style="color: red">[{% if house_obj.is_new %}新房{% else %}二手房{% endif %}]</span>{{ house_obj.title }}</h3>
+        </div>
+        <!--楼盘标题结束-->
+        <!--焦点图开始-->
+        <div class="span6" id="focus">
+            <div class="carousel slide" id="carousel-325862">
+                <ol class="carousel-indicators">
+                    {% for img in house_obj.img.all %}
+                        <li class="active" data-slide-to="{{ forloop.counter }}" data-target="#carousel-325862">
+                        </li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    <!--图1-->
+                    {% for img in house_obj.img.all %}
+                        <div class="item {% if forloop.first %}active{% endif %}">
+                            <img src="/media/{{ img.img }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <a data-slide="prev" href="#carousel-325862" class="left carousel-control">‹</a> <a data-slide="next"
+                                                                                                    href="#carousel-325862"
+                                                                                                    class="right carousel-control">›</a>
+            </div>
+        </div>
+        <!--焦点图结束-->
+
+        <!--楼盘简介-->
+        <div id="propertyIntroduction" class="span6">
+            <p><span class="propertyPrice">{{ house_obj.price }}</span>元/㎡</p>
+            <p>总价：<span class="propertyPrice">{{ house_obj.total_prices }}</span>万</p>
+
+            {% if house_obj.user == request.user or is_interview %}
+                <div class="property-tel">
+                    <img src="/static/images/propertytel.png" width="50" height="50" border="0"/>
+                    <h4>{{ house_obj.user.myuser.phone }}</h4>
+                </div>
+                {% else %}
+                <button class="btn btn-primary" type="button" onclick="sqmt({{ house_obj.id }})">申请面谈</button>
+            {% endif %}
+
+{#            <table width="400" cellpadding="0" cellspacing="0" border="0">#}
+{#                <tr height="30">#}
+{#                    <td width="200">发布时间：<span>{{ house_obj.create_datetime|date}}</span></td>#}
+{#                    <td width="200">入住时间：<span>2013-06-30</span></td>#}
+{#                </tr>#}
+{#                <tr height="30">#}
+{#                    <td>物业类型：<span>住宅,别墅</span></td>#}
+{#                    <td>装修情况：<span>精装修</span></td>#}
+{#                </tr>#}
+{#                <tr height="30">#}
+{#                    <td>建筑类型：<span>高层,双拼别墅</span></td>#}
+{#                    <td>开发商：<span>无锡市碧桂园房地产开</span></td>#}
+{#                </tr>#}
+{#                <tr height="30">#}
+{#                    <td colspan="2">楼盘地址： [锡山 安镇] 锡东高铁站商务区新华路北...</td>#}
+{#                </tr>#}
+{#                <tr height="30">#}
+{#                    <td colspan="2">主力户型：<a href="#"> 3居室127平米</a> ; <a href="#">2居室90平米 （全部户型）</a></td>#}
+{#                </tr>#}
+{#            </table>#}
+        </div>
+        <!--楼盘简介结束-->
+
+
+    </div>
+    <!--第一部分，楼盘简述结束-->
+
+    <!--第二部分-->
+    <div class="span12" id="part2">
+        <!--楼盘详情-->
+        <div id="propertyDetail" class="span12">
+            <div class="propertyDetail-title">
+                <h5>房屋详情</h5>
+            </div>
+            <div class="propertyOutline">
+                <p><span>房屋详情：</span>{{ house_obj.housing_details }}</p>
+            </div>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr height="30">
+                    <td width="65">面积：</td>
+                    <td width="150">{{ house_obj.acreage }}平米</td>
+                    <td width="65">小区名称：</td>
+                    <td width="150">{{ house_obj.plot_name }}</td>
+                </tr>
+                <tr height="30">
+                    <td width="65">户型：</td>
+                    <td width="150">{{ house_obj.get_door_model_display }}</td>
+                    <td width="65">车位：</td>
+                    <td width="150">无</td>
+                </tr>
+                <tr height="30">
+                    <td width="65">产权类型：</td>
+                    <td width="150">{{ house_obj.get_house_type_display }}</td>
+                    <td width="65">楼层：</td>
+                    <td width="150">{{ house_obj.fllor }}层</td>
+                </tr>
+                <tr height="30">
+                    <td width="65">装修情况：</td>
+                    <td width="150">{{ house_obj.decorate_situation }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock main-body %}
+
+{% block main-script %}
+    <script>
+        function sqmt(houseID) {
+            $.ajax({
+                url:'/sqmt',
+                type: 'POST',
+                data: {houseID:houseID},
+                dataType: 'JSON',
+                success: function (data) {
+                    if(data.status) alert('申请成功!')
+                }
+            })
+        }
+    </script>
+{% endblock main-script %}
+
+
+
+
+  
+
+
+
+

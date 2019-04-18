@@ -1,0 +1,81 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}{% endblock title %}
+
+
+{% block user_style %}
+    <link href="/static/css/MyFavorite.css" rel="stylesheet" type="text/css"/>
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div class="span8">
+        <div class="myFavorite-title">
+            <h4>我的发布</h4>
+        </div>
+    </div>
+    <!--我的收藏开始-->
+    <div class="span8" id="myFavorite">
+        <table width="700" cellspacing="0" cellpadding="0" border="0">
+
+            <tr height="40" class="tr-bgclor">
+                <td align="left">
+                    <span>全选</span>
+                    <a href="/addHouse" class="delete">发布新房屋</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            {% for house in house_obj %}
+                <tr height="120" valign="middle">
+                    <td width="150" align="left"><img src="/static/images/Favorite.jpg" width="125" height="85"
+                                                      border="0"/>
+                    </td>
+                    <td width="230">
+                        <p><a href="#" class="PropertyName">{{ house.title }}</a></p>
+                        <p>户型：<span>{{ house.get_house_type_display }}</span></p>
+                        <p>区域：<span>{{ house.area.name }}</span></p>
+                        <a href="/HouseDetail/{{ house.id }}" class="readdetail">查看详情</a><a href="#"
+                                                                                            class="SubscriptionInfo">{{ house.get_audit_type_display }}</a>
+                    </td>
+                    <td width="70" align="center"><p class="PropertyPrice">{{ house.total_prices }}万</p></td>
+                    <td width="230">
+                        <p>
+                            {{ house.plot_name }}
+
+                            <a class="readdetail">{% if house.is_new %} 新房{% else %}二手房 {% endif %}</a>
+                        </p>
+                        <p>电话：<span>{{ house.user.myuser.phone }}</span></p></td>
+                </tr>
+            {% endfor %}
+
+
+{#            <tr height="40" class="tr-bgclor">#}
+{#                <td width="30" colspan="5">#}
+{#                    <div class="span8" id="page">#}
+{#                        <a href="#">尾页</a>#}
+{#                        <a href="#">下一页</a>#}
+{#                        <a href="#">2</a>#}
+{#                        <a href="#">1</a>#}
+{#                        <a href="#">上一页</a>#}
+{#                        <a href="#">第一页</a>#}
+{##}
+{#                    </div>#}
+{#                </td>#}
+{#            </tr>#}
+        </table>
+    </div>
+    <!--我的收藏结束-->
+{% endblock user_body %}
+
+
+{% block main-script %}
+{% endblock main-script %}

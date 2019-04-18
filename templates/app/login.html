@@ -1,0 +1,74 @@
+{% extends 'app/main.html' %}
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}多多房-登陆{% endblock title %}
+
+{% block main-style %}
+
+    <link href="/static/css/Login.css" rel="stylesheet" type="text/css"/>
+{% endblock main-style %}
+
+{% block body-style %}{% endblock body-style %}
+
+
+{% block excloud-foot-body %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+
+                <!--头部开始-->
+                <div id="top">
+                    <a href="/"><img src="/static/images/logo.png" width="150" height="50" border="0"/></a>
+                </div>
+                <!--头部结束-->
+
+                <!--登录内容开始-->
+                <form method="post">
+                    <div id="login">
+                        <table>
+                            <tr height="50">
+                                <td colspan="3"><h4>用户登录</h4></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right"><label class="control-label" for="inputInfo">账户：</label>
+                                </td>
+                                <td><input type="text" id="inputInfo" placeholder="邮箱/昵称" name="username"></td>
+                                <td><span class="help-inline">账户不能为空</span></td>
+                            </tr>
+
+
+                            <tr height="50">
+                                <td height="24" align="right"><label class="control-label" for="inputInfo">密码：</label>
+                                </td>
+                                <td><input type="password" id="inputInfo" name="password"></td>
+                                <td><span class="help-inline">密码不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td></td>
+                                <td colspan="2">
+                                    <label class="checkbox"><input type="checkbox" class="ckbox">下次自动登录</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" colspan="2">
+                                    <button class="btn btn-info" type="submit">登录</button>
+                                    <a href="/register">免费注册</a>
+                                </td>
+                                <td><span class="help-inline">{{ erro }}</span></td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                </form>
+                <!--登录内容结束-->
+
+            </div>
+        </div>
+    </div>
+{% endblock excloud-foot-body %}
+
+{% block script %}
+{% endblock script %}

@@ -1,0 +1,87 @@
+{% extends 'app/main.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}{% endblock title %}
+
+
+{% block main-style %}
+    <link href="/static/css/common/UserInfoLeft.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .user_active {
+            background-color: #87ceeb;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+    </style>
+    {% block user_style %}{% endblock user_style %}
+{% endblock main-style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+{% block main-body %}
+    <!--左侧-->
+    <div id="Left" class="span4">
+        <!--个人中心-->
+        <div class="personalCenter">
+            <div class="personalCenter-title">
+                <h5>个人中心</h5>
+            </div>
+            <div class="personalCenter-content">
+                <p class="userName">{{ request.user.first_name }}</p>
+                <p><a href="/changeUserInfo">修改个人资料</a></p>
+                <p><a href="/changePassword">修改密码</a></p>
+            </div>
+        </div>
+        <!--个人中心结束-->
+
+        <!--用户功能权限-->
+        <div class="userFunction">
+            <ul class="nav nav-pills nav-tabs nav-stacked">
+                <li>
+                    <a href="/ManageRelease" class="MyFavorites">
+                        <img src="/static/images/MyFavorites.png" width="15" height="15" border="0">
+                        我的发布
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/ShowHistory" class="BrowseHistory">
+                        <img src="/static/images/BrowseHistory.png" width="15" height="15" border="0">
+                        浏览历史
+                    </a>
+                </li>
+
+                <li><a href="/ShowInterview" class="Subscription"><img src="/static/images/Subscription.png"
+                                                                       width="15"
+                                                                       height="15" border="0">申请面谈</a></li>
+
+
+                {% if request.user.is_staff %}
+                    <li>
+                        <a href="/audit" class="Released">
+                            <img src="/static/images/ReleaseSale.png" width="15" height="15" border="0">
+                            房屋审核
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+        <!--用户功能权限结束-->
+
+
+    </div>
+    <!--左侧结束-->
+
+    <!--右侧-->
+    {% block user_body %}
+    {% endblock user_body %}
+    <!--右侧结束-->
+{% endblock main-body %}
+
+{% block main-script %}
+{% endblock main-script %}

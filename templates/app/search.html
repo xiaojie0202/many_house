@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>搜索框</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="css/search.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	
+	
+</head>
+
+<body>
+				<!--搜索开始-->
+				<div class="tabbable" id="tabs-search">
+					<ul class="search-tabs">
+						<li class="active">
+							<a href="#panel-newhouse" data-toggle="tab">新房</a>
+						</li>
+						<li>
+							<a href="#panel-rent" data-toggle="tab">租房</a>
+						</li>
+						<li>
+							<a href="#panel-scendhouse" data-toggle="tab">二手房</a>
+						</li>
+						<li>
+							<a href="#panel-news" data-toggle="tab">资讯</a>
+						</li>
+						<li>
+							<a href="#panel-search" data-toggle="tab">搜索</a>
+						</li>
+					</ul>
+
+					<div class="clear"></div>
+
+					<!--选项卡内容开始-->
+					<div class="tab-content">
+						<!--新房搜索开始-->
+						<div class="tab-pane active" id="panel-newhouse">
+
+							<div class="input-append">
+								<select id="inputInfo" style="width:70px; margin-right:5px;">
+									  <option>区域</option>
+									  <option>崇安</option>
+									  <option>南长</option>
+									  <option>滨湖</option>
+									  <option>北塘</option>
+									  <option>新区</option>
+									  <option>锡山</option>
+									  <option>惠山</option>
+									  <option>宜兴</option>
+									  <option>江阴</option>
+								</select>
+
+								<select id="inputInfo" style="width:100px; margin-right:5px;">
+									  <option>物业类型</option>
+									  <option>住宅</option>
+									  <option>写字楼</option>
+									  <option>别墅</option>
+								</select>
+
+								<select id="inputInfo" style="width:90px; margin-right:5px;">
+									  <option>价格</option>
+									  <option>6000以下</option>
+									  <option>6000-7000</option>
+									  <option>7000-8000</option>
+									  <option>8000-1万</option>
+									  <option>1万-1.2万</option>
+									  <option>1.2万以上</option>
+								</select>
+
+							  <input class="span2" id="appendedInputButton" type="text">
+							  <button class="btn btn-info" type="button">搜索</button>
+
+							</div>
+						</div>
+						<!--新房搜索结束-->
+
+						<!--租房搜索开始-->
+						<div class="tab-pane" id="panel-rent">
+							<div class="input-append">
+								<select id="inputInfo" style="width:70px; margin-right:5px;">
+									  <option>区域</option>
+									  <option>崇安</option>
+									  <option>南长</option>
+									  <option>滨湖</option>
+									  <option>北塘</option>
+									  <option>新区</option>
+									  <option>锡山</option>
+									  <option>惠山</option>
+									  <option>宜兴</option>
+									  <option>江阴</option>
+								</select>
+
+								<select id="inputInfo" style="width:100px; margin-right:5px;">
+									  <option>户型</option>
+									  <option>1室1厅</option>
+									  <option>2室1厅</option>
+									  <option>3室1厅</option>
+								</select>
+
+								<select id="inputInfo" style="width:90px; margin-right:5px;">
+									  <option>价格</option>
+									  <option>6000以下</option>
+									  <option>6000-7000</option>
+									  <option>7000-8000</option>
+									  <option>8000-1万</option>
+									  <option>1万-1.2万</option>
+									  <option>1.2万以上</option>
+								</select>
+
+							  <input class="span2" id="appendedInputButton" type="text">
+							  <button class="btn btn-info" type="button">搜索</button>
+
+							</div>
+						</div>
+						<!--租房搜索结束-->
+
+						<!--二手房搜索开始-->
+						<div class="tab-pane" id="panel-scendhouse">
+
+							<div class="input-append">
+								<select id="inputInfo" style="width:80px; margin-right:5px;">
+									  <option>来源</option>
+									  <option>个人</option>
+									  <option>中介</option>
+								</select>
+
+								<select id="inputInfo" style="width:80px; margin-right:5px;">
+									  <option>区域</option>
+									  <option>崇安</option>
+									  <option>南长</option>
+									  <option>滨湖</option>
+									  <option>北塘</option>
+									  <option>新区</option>
+									  <option>锡山</option>
+									  <option>惠山</option>
+									  <option>宜兴</option>
+									  <option>江阴</option>
+								</select>
+
+								<select id="inputInfo" style="width:100px; margin-right:5px;">
+									  <option>价格</option>
+									  <option>6000以下</option>
+									  <option>6000-7000</option>
+									  <option>7000-8000</option>
+									  <option>8000-1万</option>
+									  <option>1万-1.2万</option>
+									  <option>1.2万以上</option>
+								</select>
+
+							  <input class="span2" id="appendedInputButton" type="text">
+							  <button class="btn btn-info" type="button">搜索</button>
+
+							</div>
+						</div>
+						<!--二手房搜索结束-->
+
+						<!--资讯搜索开始-->
+						<div class="tab-pane" id="panel-news">
+
+							<div class="input-append">
+								<select id="inputInfo" style="width:70px; margin-right:5px;">
+									  <option>资讯</option>
+									  <option>今日头条</option>
+									  <option>最新资讯</option>
+								</select>
+							  <input class="span4" id="appendedInputButton" type="text">
+							  <button class="btn btn-info" type="button">搜索</button>
+
+							</div>
+						</div>
+						<!--资讯搜索结束-->
+
+						<!--搜索开始-->
+						<div class="tab-pane" id="panel-search">
+							<div class="input-append">
+
+							  <input class="span4" id="appendedInputButton" type="text" style="width:430px;">
+							  <button class="btn btn-info" type="button">搜索</button>
+
+							</div>
+						</div>
+						<!--搜索结束-->
+
+					</div>
+					<!--选项卡内容结束-->
+
+				</div>
+				<!--搜索结束-->
+</body>
+</html>

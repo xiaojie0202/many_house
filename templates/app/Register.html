@@ -1,0 +1,137 @@
+{% extends 'app/main.html' %}
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}多多房-注册{% endblock title %}
+
+{% block main-style %}
+
+    <link href="/static/css/Register.css" rel="stylesheet" type="text/css"/>
+
+{% endblock main-style %}
+
+{% block body-style %}{% endblock body-style %}
+
+
+{% block excloud-foot-body %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+
+                <!--头部开始-->
+                <div id="top">
+                    <a href="/"><img src="/static/images/logo.png" width="150" height="50" border="0"/></a>
+                </div>
+                <!--头部结束-->
+
+                <!--注册内容开始-->
+                <div id="register">
+                    <form method="post">
+                        <table>
+                            <tr height="50">
+                                <td colspan="3"><h4>用户注册</h4></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right">
+                                    <label class="control-label" for="inputInfo">
+                                        <span class="Required">*</span>
+                                        账号：
+                                    </label>
+                                </td>
+
+                                <td>
+                                    <input type="text" id="inputInfo" placeholder="6-20个字符，支持英文、数字" name="username" required value="{{ request.POST.username }}">
+                                </td>
+                                <td><span class="help-inline">账号不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right">
+                                    <label class="control-label" for="inputInfo">
+                                        <span class="Required">*</span>
+                                        邮箱：
+                                    </label>
+                                </td>
+                                <td><input type="text" id="inputInfo" placeholder="请输入您常用的邮箱" name="email" required  value="{{ request.POST.email }}">
+                                </td>
+                                <td><span class="help-inline">邮箱不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right"><label class="control-label" for="inputInfo"><span
+                                        class="Required">*</span>手机号：</label></td>
+                                <td><input type="text" id="inputInfo" placeholder="请输入您常用的手机号码" name="phone" required  value="{{ request.POST.phone }}">
+                                </td>
+                                <td><span class="help-inline">手机号码不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right">
+                                    <label class="control-label" for="inputInfo">
+                                        <span class="Required">*</span>
+                                        密码：
+                                    </label>
+                                </td>
+                                <td><input type="password" id="inputInfo" name="pwd1" required  value="{{ request.POST.pwd1 }}"></td>
+                                <td><span class="help-inline">密码不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right"><label class="control-label" for="inputInfo"><span
+                                        class="Required">*</span>确认密码：</label></td>
+                                <td><input type="password" id="inputInfo" name="pwd2" required  value="{{ request.POST.pwd1 }}"></td>
+                                <td><span class="help-inline">确认密码不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right">
+                                    <label class="control-label" for="inputInfo">
+                                        <span class="Required">*</span>
+                                        所在地：</label></td>
+                                <td>
+                                    <select id="inputInfo" required name="area">
+                                        {% for a in area %}
+                                            {% for b in a.area_set.all %}
+                                                <option value="{{ b.id }}">{{ b.name }}</option>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </select>
+                                </td>
+                                <td><span class="help-inline">区域不能为空</span></td>
+                            </tr>
+                            <tr height="50">
+                                <td height="24" align="right">
+                                    <label class="control-label" for="inputInfo">
+                                        <span class="Required">*</span>
+
+                                        真是姓名：
+                                    </label>
+                                </td>
+                                <td><input type="text" id="inputInfo" name="first_name" required  value="{{ request.POST.first_name }}"></td>
+                                <td></td>
+                            </tr>
+                            <tr height="50">
+                                <td></td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" class="ckbox" checked><a
+                                            href="#" target="_blank">同意多多房子用户协议</a></label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr height="50">
+                                <td></td>
+                                <td>
+                                    <button class="btn btn-info" type="submit">完成注册</button>
+                                </td>
+                                <td><span class="help-inline">{{ erro }}</span></td>
+                            </tr>
+
+                        </table>
+                    </form>
+                </div>
+                <!--注册内容结束-->
+
+            </div>
+        </div>
+    </div>
+{% endblock excloud-foot-body %}
+
+{% block script %}
+{% endblock script %}
+
+

@@ -1,0 +1,71 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}修改资料{% endblock title %}
+
+
+{% block user_style %}
+    <link href="/static/css/ModifyPersonalInfo.css" rel="stylesheet" type="text/css"/>
+
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div id="Right" class="span8">
+        <div class="modifyPersonalInfo-title">
+            <h4>个人资料修改</h4>
+        </div>
+
+        <!--资料修改开始-->
+        <div class="span6" id="modifyPersonalInfo">
+            <form method="post">
+                <table>
+
+                    <tr height="50">
+                        <td height="24" align="right"><label class="control-label" for="inputInfo"><span
+                                class="Required">*</span>姓名：</label></td>
+                        <td><input type="text" id="inputInfo" placeholder="4-20个字符，支持中英文、数字、下划线" required
+                                   value="{{ request.user.first_name }}" name="first_name"></td>
+                        <td><span class="help-inline">姓名不能为空</span></td>
+                    </tr>
+                    <tr height="50">
+                        <td height="24" align="right"><label class="control-label" for="inputInfo"><span
+                                class="Required">*</span>邮箱：</label></td>
+                        <td><input type="text" id="inputInfo" placeholder="请输入您常用的邮箱" required
+                                   value="{{ request.user.email }}" name="email"></td>
+                        <td><span class="help-inline">邮箱不能为空</span></td>
+                    </tr>
+                    <tr height="50">
+                        <td height="24" align="right"><label class="control-label" for="inputInfo"><span
+                                class="Required">*</span>手机号：</label></td>
+                        <td><input type="text" id="inputInfo" placeholder="请输入您常用的手机号码" required
+                                   value="{{ request.user.myuser.phone }}" name="phone"></td>
+                        <td><span class="help-inline">手机号码不能为空</span></td>
+                    </tr>
+
+                    <tr height="50">
+                        <td></td>
+                        <td>
+                            <button class="btn btn-info" type="submit">确认修改</button>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+        <!--修改结束-->
+
+    </div>
+
+{% endblock user_body %}
+
+
+
+

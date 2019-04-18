@@ -1,0 +1,249 @@
+/*搜索*/
+#appendedInputButton{
+	box-shadow:0 0 10px #cccccc inset;
+	-webkit-box-shadow:0 0 10px #cccccc inset;
+	-moz-box-shadow:0 0 10px #cccccc inset;
+}
+#searchtext{
+	float:right;
+	width:520px;
+	height:40px;
+	margin:10px 0 0 0;
+}
+.input-append{
+	height:40px;
+}
+.btn btn-info{
+	float:right;
+	margin-right:0;
+}
+
+
+/*第一部分，楼盘简述开始*/
+#part1{
+	margin-left:0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+	height:330px;
+}
+
+/*焦点图*/
+#focus{
+	margin:10px 0 10px 10px;
+	width:640x;
+}
+
+/*活动专题*/
+#Activity{
+	width:290px;
+}
+.Activity-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.Activity-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.Activity-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#Activity ul{
+	margin:15px 10px 20px 25px;
+}
+#Activity ul li{
+	line-height:25px;
+	list-style-type:circle;
+}
+
+/*今日头条*/
+#part2,#part3{
+	margin-left:0;
+}
+#Todayheadline{
+	width:475px;
+	margin:10px 10px 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.Todayheadline-title,.LocalInformation-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.Todayheadline-title h5,.LocalInformation-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.Todayheadline-title a,.LocalInformation-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+
+#Todayheadline table{
+	margin:10px 20px 10px 20px;
+}
+#Todayheadline table tr{
+	border-bottom:1px dashed #e7e7e7;
+}
+#Todayheadline table tr:hover{
+	border-bottom:1px solid #87ceeb;
+	background-color:#e7e7e7;
+}
+.News-title{
+	font-size:16px;
+	font-weight:bold;
+}
+.first-td{
+	color:#FF6600;
+}
+
+
+
+
+/*本地资讯*/
+#LocalInformation{
+	width:475px;
+	margin:10px 0 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+#LocalInformation table{
+	margin:10px 20px 10px 20px;
+}
+#LocalInformation table tr{
+	border-bottom:1px dashed #e7e7e7;
+}
+#LocalInformation table tr:hover{
+	border-bottom:1px solid #87ceeb;
+	background-color:#e7e7e7;
+}
+
+
+/*新房导购*/
+
+#ShoppingGuide{
+	width:310px;
+	height:300px;
+	margin:0 10px 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+/*.ShoppingGuide-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}*/
+.ShoppingGuide-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.ShoppingGuide-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#ShoppingGuide ul{
+	margin:15px 10px 20px 40px;
+}
+#ShoppingGuide ul li{
+	line-height:25px;
+	list-style-type:circle;
+}
+
+
+/*楼盘动态*/
+#PropertyNews{
+	width:320px;
+	height:300px;
+	margin:0 10px 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+.PropertyNews-title,.ShoppingGuide-title,.NewPropertyinfo-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}
+.PropertyNews-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.PropertyNews-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#PropertyNews ul{
+	margin:15px 10px 20px 40px;
+}
+#PropertyNews ul li{
+	line-height:25px;
+	list-style-type:circle;
+}
+
+
+
+/*新盘资讯*/
+#NewPropertyinfo{
+	width:310px;
+	height:300px;
+	margin:0 0 10px 0;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFFF;
+	box-shadow:5px 5px 7px #999;
+	-webkit-box-shadow:5px 5px 7px #999;
+	-moz-box-shadow:5px 5px 7px #999;
+}
+/*.NewPropertyinfo-title{
+	margin:10px;
+	height:30px;
+	line-height:30px;
+	border-bottom:2px solid #87ceeb;
+}*/
+.NewPropertyinfo-title h5{
+	float:left;
+	margin:0 0 0 10px;
+}
+.NewPropertyinfo-title a{
+	float:right;
+	margin:0 10px 0 0;
+}
+#NewPropertyinfo ul{
+	margin:15px 10px 20px 40px;
+}
+#NewPropertyinfo ul li{
+	line-height:25px;
+	list-style-type:circle;
+}

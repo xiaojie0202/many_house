@@ -1,0 +1,236 @@
+{% extends 'userinfo/user_base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block title %}审核发布{% endblock title %}
+
+
+{% block user_style %}
+    <style>
+        .Released {
+            background-color: #87ceeb;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        #Right {
+            width: 740px;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            background-color: #FFFFFF;
+            box-shadow: 5px 5px 7px #999;
+            -webkit-box-shadow: 5px 5px 7px #999;
+            -moz-box-shadow: 5px 5px 7px #999;
+        }
+
+        .browseHistory-title h4 {
+            color: #87ceeb;
+            margin: 0 0 10px 20px;
+        }
+
+        .browseHistory-title {
+            width: 700px;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #87ceeb;
+        }
+
+        .span12 {
+            width: 960px;
+        }
+
+        .date, .week {
+            margin: 0 0 0 10px;
+        }
+
+        .delete {
+            margin: 0 0 0 20px;
+        }
+
+        .tr-bgclor {
+            background-color: #F5F5F5;
+        }
+
+        #browseHistory table td {
+            border-top: 1px solid #e7e7e7;
+        }
+
+        .PropertyPrice {
+            font-size: 14px;
+            font-weight: bold;
+            color: #FF6600;
+        }
+
+        #browseHistory table tr:hover {
+            background-color: #F5F5F5;
+        }
+
+        .iscollect {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            color: #FFFFFF;
+            display: block;
+            background-color: #87ceeb;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            margin: 0 20px 0 0;
+        }
+
+        .isSubscriptionInfo {
+            width: 90px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            color: #FFFFFF;
+            display: block;
+            background-color: #87ceeb;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        .browseHistory-PropertyName {
+            font-weight: bold;
+            font-size: 14px;
+            margin: 0 0 0 10px;
+        }
+
+        #page {
+            width: 700px;
+        }
+
+        #page a {
+            float: right;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            display: block;
+            background-color: #87ceeb;
+            margin: 0 10px 0 0;
+            color: #FFFFFF;
+        }
+    </style>
+
+{% endblock user_style %}
+
+
+{% block body-style %}
+{% endblock body-style %}
+
+
+{% block user_body %}
+    <div id="Right" class="span8">
+        <div class="subscription-title">
+            <h4>面谈管理</h4>
+        </div>
+
+        <!--订阅管理开始-->
+        <div id="subscription">
+            <table width="700" cellspacing="0" cellpadding="0" border="0">
+
+                <tr height="40" class="tr-bgclor">
+                    <td align="center">
+                        <span class="date">发布的房屋</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">发布用户</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">发布日期</span>
+                    </td>
+                    <td align="center">
+                        <span class="date">区域</span>
+                    </td>
+                    <td></td>
+                </tr>
+
+                {% for house_obj in house_obj_list %}
+                    <tr height="50" valign="middle">
+
+                        <td width="300" align="left">
+                            <p><a href="/HouseDetail/{{ house_obj.id }}"
+                                  class="subscription-PropertyName">{{ house_obj.title }}</a></p>
+                        </td>
+                        <td width="100" align="center">
+                            <span>{{ house_obj.user.first_name }}</span>
+                        </td>
+                        <td width="100" align="center">
+                            <span>{{ house_obj.create_datetime|date }}</span>
+                        </td>
+                        <td width="100" align="center">
+                            <span>{{ house_obj.plot_name }}</span>
+                        </td>
+                        <td width="100" align="center"><a onclick="shtg({{ house_obj.id }})">审核通过</a></td>
+                    </tr>
+                {% endfor %}
+
+
+
+                {##}
+                {#                <tr height="40" class="tr-bgclor">#}
+                {#                    <td width="30" align="center" colspan="5">#}
+                {#                        <div class="span8" id="page">#}
+                {#                            <a href="#">尾页</a>#}
+                {#                            <a href="#">下一页</a>#}
+                {#                            <a href="#">2</a>#}
+                {#                            <a href="#">1</a>#}
+                {#                            <a href="#">上一页</a>#}
+                {#                            <a href="#">第一页</a>#}
+                {##}
+                {#                        </div>#}
+                {#                    </td>#}
+                {##}
+                {#                </tr>#}
+            </table>
+        </div>
+        <!--订阅管理结束-->
+
+    </div>
+
+{% endblock user_body %}
+
+
+{% block main-script %}
+    <script>
+        function shtg(houseID) {
+            $.ajax({
+                url: '/shtg',
+                type: 'POST',
+                data: {houseID: houseID},
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.status) {
+                        window.location.reload()
+                    }
+                }
+            })
+        }
+    </script>
+{% endblock main-script %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

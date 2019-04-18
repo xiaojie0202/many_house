@@ -1,0 +1,605 @@
+/*搜索*/
+
+#part-search {
+    height: 250px;
+    width: 715px;
+    float: left;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    behavior: url(/static/PIE/PIE.htc);
+}
+
+/*搜索框*/
+.input-append {
+    margin: 20px 20px 20px 20px;
+}
+
+#appendedInputButton {
+    box-shadow: 0 0 10px #cccccc inset;
+    -webkit-box-shadow: 0 0 10px #cccccc inset;
+    -moz-box-shadow: 0 0 10px #cccccc inset;
+}
+
+
+.searchdetail {
+    margin: 20px 20px 30px 20px;
+}
+
+#searchdetail01, #searchdetail02, #searchdetail03 {
+    border-right: 1px solid #e7e7e7;
+    height: 120px;
+    width: 150px;
+    float: left;
+}
+
+#searchdetail04 {
+    width: 150px;
+    float: left;
+}
+
+/*团购*/
+#GroupBuy {
+    margin: 0 0 0 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    height: 250px;
+    width: 235px;
+    float: right;
+}
+
+.GroupBuy-title {
+    background-color: #87CEEB;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    width: 235px;
+    margin: 0;
+}
+
+.img-rounded {
+    margin: 10px 0 0 10px;
+}
+
+
+/*房地产头条*/
+/*
+	房地产头条，楼盘大全的共同部分
+*/
+#part2 {
+    margin: 15px 0 15px 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+}
+
+.part2-title, .part5-title {
+    background-color: #87CEEB;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    margin: 0;
+}
+
+h5 {
+    color: #FFFFFF;
+    margin: 0 0 0 10px;
+    line-height: 30px;
+    float: left;
+}
+
+.part2-title h5 {
+    float: left;
+}
+
+.part2-title a {
+    float: right;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #FFFFFF;
+}
+
+
+#Todayheadline, #LocalInformation, #PropertyNews {
+    width: 290px;
+}
+
+#part2 ul li {
+    list-style-type: circle;
+}
+
+.newkind {
+    color: #000000;
+}
+
+#part2 a {
+    line-height: 25px;
+}
+
+
+/*热点新盘推荐*/
+#HotProperty {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    height: 370px;
+}
+
+.HotProperty-title {
+    background-color: #87CEEB;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    margin: 0;
+}
+
+.HotProperty-title h5 {
+    float: left;
+}
+
+.HotProperty-title a {
+    float: right;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #FFFFFF;
+}
+
+.hotProperty01 {
+    padding: 15px 15px 0 15px;
+    height: 200px;
+}
+
+.thumbnail {
+    padding: 15px;
+}
+
+.thumbnail img {
+    margin: 0 0 10px 0;
+}
+
+#hotProperty02 {
+    width: 330px;
+}
+
+#hotProperty02 ul li {
+    list-style-type: circle;
+    line-height: 25px;
+}
+
+
+/*新盘资讯*/
+#NewPropertyinfo {
+    margin: 0 0 15px 10px;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    height: 370px;
+    width: 235px;
+}
+
+.NewPropertyinfo-title {
+    background-color: #87CEEB;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    margin: 0;
+}
+
+.NewPropertyinfo-title h5 {
+    float: left;
+}
+
+.NewPropertyinfo-title a {
+    float: right;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #FFFFFF;
+}
+
+#NewPropertyinfo ul {
+    margin: 15px 10px 20px 25px;
+}
+
+#NewPropertyinfo ul li {
+    line-height: 25px;
+    list-style-type: circle;
+}
+
+
+/*热销新房、精品新房*/
+#NewHomes {
+    margin: 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    width: 713px;
+    height: 270px;
+}
+
+#tabs-823704 {
+    width: 713px;
+}
+
+.tabbable ul {
+    background-color: #87ceeb;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    border: 0;
+}
+
+.tabbable ul li a {
+    height: 12px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.tabbable ul li a:hover {
+    color: #000000;
+}
+
+.tabbable ul li {
+    border: 0;
+}
+
+.tab-content {
+    padding: 15px 15px 0 15px;
+}
+
+/*热销新房*/
+.NewHomeslink {
+    padding: 0 0 0 25px;
+}
+
+/*新房导购*/
+#ShoppingGuide {
+    margin: 0 0 15px 10px;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    width: 235px;
+    height: 270px;
+}
+
+.ShoppingGuide-title {
+    background-color: #87CEEB;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    height: 30px;
+    margin: 0;
+}
+
+.ShoppingGuide-title h5 {
+    float: left;
+}
+
+.ShoppingGuide-title a {
+    float: right;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #FFFFFF;
+}
+
+#ShoppingGuide ul {
+    margin: 15px 10px 20px 25px;
+}
+
+#ShoppingGuide ul li {
+    line-height: 25px;
+    list-style-type: circle;
+}
+
+
+/*楼盘大全*/
+#AllProperty {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+}
+
+.part5-title a {
+    float: right;
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #FFFFFF;
+}
+
+#AllProperty01, #AllProperty02, #AllProperty03 {
+    margin: 20px 0 0 0;
+    padding: 0 0 0 20px;
+}
+
+#AllProperty01, #AllProperty02 {
+    border-right: 1px solid #e7e7e7;
+}
+
+.PropertyPrice {
+    color: #FF6600;
+}
+
+/*楼盘排行*/
+#PropertyRanking {
+    margin: 0 0 15px 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    width: 235px;
+}
+
+#PropertyRanking table tr td {
+    border: 0;
+}
+
+.Ranking {
+    padding: 10px 10px 0 10px;
+}
+
+
+/*别墅、商铺、写字楼*/
+#part6 {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    width: 960px;
+}
+
+.tabbable {
+    width: 960px;
+}
+
+
+/*热门别墅*/
+.hot-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.hot-title a {
+    float: right;
+}
+
+.hot-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+/*别墅楼盘*/
+.table-title {
+    background-color: #e7e7e7;
+}
+
+#VillaProperty table {
+    margin: 0 0 0 10px;
+}
+
+.td-Propertyname {
+    padding: 0 0 0 10px;
+}
+
+.td-area {
+    padding: 0 10px 0 0;
+}
+
+/*最新别墅*/
+.new-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.new-title a {
+    float: right;
+}
+
+.new-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+
+/*商铺*/
+/*商铺楼盘*/
+.table-title {
+    background-color: #e7e7e7;
+}
+
+.td-Propertyname {
+    padding: 0 0 0 10px;
+}
+
+.td-area {
+    padding: 0 10px 0 0;
+}
+
+/*商铺资讯*/
+.ShopInfo-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.ShopInfo-title a {
+    float: right;
+}
+
+.ShopInfo-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+/*热门商铺*/
+.HotShop-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.HotShop-title a {
+    float: right;
+}
+
+.HotShop-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+
+/*写字楼*/
+/*写字楼投资*/
+.OfficeInvestment-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.OfficeInvestment-title a {
+    float: right;
+}
+
+.OfficeInvestment-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+.OfficeInve {
+    padding: 0 0 0 10px;
+}
+
+/*热门写字楼*/
+.HotOffice-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.HotOffice-title a {
+    float: right;
+}
+
+.HotOffice-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    s margin: 0 0 10px 0;
+}
+
+
+/*二手房、租房开始*/
+#part7 {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 7px #999;
+    -webkit-box-shadow: 5px 5px 7px #999;
+    -moz-box-shadow: 5px 5px 7px #999;
+    width: 960px;
+}
+
+/*最新二手房*/
+.NewSecond-hand-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.NewSecond-hand-title a {
+    float: right;
+}
+
+.NewSecond-hand-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+/*二手房资讯*/
+.SecondHandInfo-title span {
+    font-weight: bold;
+    float: left;
+}
+
+.SecondHandInfo-title a {
+    float: right;
+}
+
+.SecondHandInfo-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+}
+
+.secondHandinfo {
+    padding: 0 0 0 10px;
+}
